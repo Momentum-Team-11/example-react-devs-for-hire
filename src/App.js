@@ -1,12 +1,8 @@
 import Developer from './components/Developer'
-
-//  create my App component -- I need react for this
-// function App() {
-//   return <h1>Devs for Hire 👩‍💻</h1>
-// }
+import { developerNames } from './developerData'
 
 const App = () => {
-  const developers = ['Kalen', 'K.E.', 'Brittany', 'Adam', 'Paul']
+  const developers = developerNames
   return (
     <>
       <h1>Devs for Hire 👩‍💻</h1>
