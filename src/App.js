@@ -9,6 +9,8 @@ const App = () => {
       {developers.map((dev, idx) => {
         if (dev.availableForHire) {
           return <Developer name={dev.name} skills={dev.skills} key={idx} />
+        } else {
+          return ''
         }
       })}
     </>
