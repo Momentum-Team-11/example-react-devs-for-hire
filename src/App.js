@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import Developer from './components/Developer'
 
-function App() {
+//  create my App component -- I need react for this
+// function App() {
+//   return <h1>Devs for Hire 👩‍💻</h1>
+// }
+
+const App = () => {
+  const developers = ['Kalen', 'K.E.', 'Brittany', 'Adam', 'Paul']
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <h1>Devs for Hire 👩‍💻</h1>
+      {developers.map((dev, idx) => {
+        return <Developer name={dev} skills="react" key={idx} />
+      })}
+    </>
+  )
 }
 
-export default App;
+export default App
