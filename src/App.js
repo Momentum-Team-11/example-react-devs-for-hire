@@ -1,13 +1,15 @@
 import Developer from './components/Developer'
-import { developerNames } from './developerData'
+import { developerData } from './developerData'
 
 const App = () => {
-  const developers = developerNames
+  const developers = developerData
   return (
     <>
       <h1>Devs for Hire 👩‍💻</h1>
       {developers.map((dev, idx) => {
-        return <Developer name={dev} skills="react" key={idx} />
+        if (dev.availableForHire) {
+          return <Developer name={dev.name} skills={dev.skills} key={idx} />
+        }
       })}
     </>
   )
