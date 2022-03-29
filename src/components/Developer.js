@@ -6,6 +6,7 @@ const Developer = ({ name, skills, github }) => {
   const [repos, setRepos] = useState([])
 
   useEffect(() => {
+    console.log('use effect runs')
     axios
       .get(
         `https://api.github.com/users/${github}/repos?per_page=3&sort=created`
@@ -13,6 +14,7 @@ const Developer = ({ name, skills, github }) => {
       .then((response) => setRepos(response.data))
   }, [github])
 
+  console.log(`Developer component for ${name} renders`)
   return (
     <div className="dev">
       <h2>{name}</h2>
