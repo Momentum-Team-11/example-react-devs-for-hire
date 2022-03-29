@@ -1,5 +1,4 @@
-import axios from 'axios'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Developer from './components/Developer'
 import { developerData } from './developerData'
 
