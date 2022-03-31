@@ -10,11 +10,16 @@ const App = () => {
     <>
       <h1>Devs for Hire 👩‍💻</h1>
       {selectedDev ? (
-        <Developer
-          name={selectedDev.name}
-          skills={selectedDev.skills}
-          github={selectedDev.gitHubUsername}
-        />
+        <>
+          <button onClick={() => setSelectedDev(null)}>
+            Go back to developer list
+          </button>
+          <Developer
+            name={selectedDev.name}
+            skills={selectedDev.skills}
+            github={selectedDev.gitHubUsername}
+          />
+        </>
       ) : (
         developers.map((dev, idx) => {
           if (dev.availableForHire) {
@@ -29,6 +34,7 @@ const App = () => {
               </div>
             )
           }
+          return null
         })
       )}
     </>
